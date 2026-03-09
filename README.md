@@ -1,6 +1,6 @@
 # cianogym
 
-Personal training analytics dashboard built with Streamlit. Visualises workout history exported from a training app, providing insights on exercise progression, muscle volume, weekly load, mesocycles and cardio.
+Personal training analytics dashboard built with Streamlit. Visualises workout history exported from the training app "Hevy", providing insights on exercise progression, muscle volume, weekly load, mesocycles and cardio.
 
 ## Pages
 
@@ -58,3 +58,7 @@ streamlit run app.py
 ```
 
 The app will open at `http://localhost:8501`.
+
+## Claude Code
+
+This project was built with [Claude Code](https://claude.ai/code). The `.claude/` folder contains project context and custom commands used during development. It is intentionally included in the repo so the full development context is available when resuming work from any machine.
