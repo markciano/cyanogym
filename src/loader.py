@@ -30,3 +30,21 @@ def load_workouts(path: str = "data/workouts.csv") -> pd.DataFrame:
     df.loc[df["week_num"].notna() & df["meso_num"].isna(), "meso_num"] = 1.0
 
     return df
+
+def load_workouts_from_buffer(buffer) -> pd.DataFrame:
+    """Load and clean the Hevy workouts CSV from a file-like buffer."""
+    df = pd.read_csv(buffer)
+
+    fmt = "%d %b %Y, %H:%M"
+    df["start_time"] = pd.to_datetime(df["start_time"], format=fmt)
+    df["end_time"] = pd.to_datetime(df["end_time"], format=fmt)
+
+    df["date"] = df["start_time"].dt.date
+    df["duration_min"] = (df["end_time"] - df["start_time"]).dt.total_seconds() / 60
+
+    df["week_num"] = df["title"].str.extract(r"w(\d+)", expand=False).astype(float)
+    meso = df["title"].str.extract(r"m(\d+)", expand=False)
+    df["meso_num"] = meso.astype(float)
+    df.loc[df["week_num"].notna() & df["meso_num"].isna(), "meso_num"] = 1.0
+
+    return df
