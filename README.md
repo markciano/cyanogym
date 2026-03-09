@@ -49,7 +49,7 @@ The app expects two CSV files placed in the project root:
 | `ejercicios_mapping.csv` | Exercise → muscle group and movement pattern mapping | root/data/mappings |
 | `musculos_secundarios.csv` | Affected muscles when principal muscle is exercised | root/data/mappings |
 
-These files are not included in the repo.
+workouts.csv is not included in the repo.
 
 ## Running the app
 
