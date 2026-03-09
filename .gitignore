@@ -19,7 +19,7 @@ env/
 .env.local
 
 # Data files (not included in repo)
-*.csv
+data/workouts.csv
 *.xlsx
 *.json
 
