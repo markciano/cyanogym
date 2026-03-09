@@ -28,8 +28,8 @@ Dedicated view for running and cardio sessions, fully separated from strength da
 
 ```bash
 # Clone the repo
-git clone https://github.com/TU_USUARIO/TU_REPO.git
-cd TU_REPO
+git clone https://github.com/markciano/cyanogym.git
+cd cyanogym
 
 # Create and activate a virtual environment
 python -m venv venv
